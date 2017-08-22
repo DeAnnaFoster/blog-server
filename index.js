@@ -6,6 +6,7 @@ var mongoose = require("mongoose");
 // var threadRoutes = require('./routes/thread-routes')
 // var userRoutes = require('./routes/user-routes')
 var blogRoutes = require('./routes/blog-routes');
+var dbConnect = require("./config/db/mlab-config");
 var server = express();
 var port = 3000;
 var cors = require('cors')
@@ -38,4 +39,4 @@ server.listen(port, () => {
     console.log("starting up Node, on port", port)
 })
 
-var dbConnect = require("./config/db/mlab-config");
+

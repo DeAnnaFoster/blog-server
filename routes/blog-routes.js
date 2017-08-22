@@ -47,10 +47,10 @@ router
   .post('/', (req, res, next) => {
     blogs.create(req.body)
       .then(blog => {
-        if (req.session.uid) {
+        //if (req.session.uid) {
           console.log(blog)
           res.send(blog)
-        }
+        //}
       }).catch(next)
   })
 //   .put('/:id', (req, res, next) => {
@@ -65,18 +65,18 @@ router
   .delete('/:id', (req, res, next) => {
     blogs.findByIdAndRemove(req.params.id)
       .then(blogs => {
-        if (req.session.uid) {
+        //if (req.session.uid) {
           res.send({ message: 'Successfully Removed' })
-        }
+        //}
       }).catch(next)
   })
 
   .post('/:id/blogposts', (req, res, next) => {
     blog.create(req.body)
       .then(blogpost => {
-        if (req.session.uid) {
+        //if (req.session.uid) {
           res.send(blogpost)
-        }
+        //}
       }).catch(next)
   })
 
